@@ -1,0 +1,17 @@
+{
+  "name": "modern_portfolio",
+  "version": "1.0.0",
+  "description": "responsive modern portfolio",
+  "main": "index.js",
+  "homepage": "https://karhusaatana.github.io/modern_portfolio/",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Otso Rouhiainen",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "node-sass": "^8.0.0"
+  }
+}
