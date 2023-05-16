@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "description": "home page",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Otso Rouhiainen",
+  "license": "ISC"
+}
