@@ -1,2 +1,72 @@
-body {
-  background: #444; }
+body, html {
+  color: red;
+  background: black;
+  font-family: 'Benguiat Bold', arial;
+  height: 100%;
+  margin: 0;
+  line-height: 1.8rem; }
+
+main {
+  height: 100%; }
+
+h2 {
+  color: #fff; }
+
+.menu-nav {
+  display: flex; }
+
+.nav-item {
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: black; }
+  .nav-item.current > a {
+    color: red; }
+  .nav-item a {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 14px; }
+    .nav-item a:hover {
+      background-color: #111; }
+
+.pimg1 {
+  background-image: url("../img/lightning.jpg");
+  min-height: 40%;
+  position: relative;
+  opacity: 0.70;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+.card-container {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap; }
+
+.card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 30rem; }
+
+.card-header img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover; }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px; }
+
+.card-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+  color: black; }
