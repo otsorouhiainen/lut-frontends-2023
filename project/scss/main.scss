@@ -1,6 +1,10 @@
 $primary-color: black;
 $secondary-color: red;
 
+// transition delay and styling
+@mixin easeOut{
+    transition: all 0.5s ease-out;
+}
 
 body, html {
     color: $secondary-color;
@@ -15,31 +19,44 @@ main{
     padding: 1rem;
     text-align: center;
 }
+h1{
+    padding-top: 3rem;
+}
 h2{
     color: #fff;
 }
-.menu-nav{
+.menu-nav {
     display: flex;
+    position: fixed;
+    width: 100%;
 }
-.nav-item{
+.nav-item {
     overflow: hidden;
     top: 0;
     width: 100%;
     background-color: $primary-color;
-    &.current > a{
-        color: $secondary-color;
-    }
     a {
-        color: #f2f2f2;
-        text-decoration: none;
-        padding: 14px;
-        &:hover {
-          background-color: #111;
-          color: $secondary-color;
-        }
+      position: relative;
+      color: #f2f2f2;
+      text-decoration: none;
+      padding: 14px;
+      &:hover{
+        @include easeOut();
+        color: $secondary-color;
+        text-decoration: underline;
+        text-decoration-color: #fff;
+      } 
     }
 }
-//image
+//current nav bar item is shown active
+.nav-item.current{
+    a{
+        color: $secondary-color;
+        text-decoration-color: #fff;
+    }
+}
+  
+//image styling (home page)
 .pimg1{
     background-image: url('../img/lightning.jpg');
     min-height: 40%;
@@ -48,6 +65,7 @@ h2{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border: 1px red solid;
 
     //makes the image static
     background-attachment: fixed;
@@ -55,34 +73,55 @@ h2{
 
 //blog cards styling
 .card-container{
-    display: flex;
-    width: 1040px;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas: 
+    'blog blog blog'
+    'blog blog blog'
+    'blog blog blog';
+    gap: 1rem;
+    margin: 1rem;
 }
 .card{
-    margin: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 30rem;
+    width: 15rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(600px);
+    @include easeOut();
 }
 .card-header img{
-    width: 100%;
-    height: 15rem;
+    width: 15rem;
+    height: 10rem;
     object-fit: cover;
-}
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-height: 250px;
 }
 .card-body p {
     font-size: 13px;
-    margin: 0 0 40px;
+    margin: 1rem;
     color: black;
+}
+//blog card animations
+.card.appear{
+    opacity: 1;
+    transform: translateY(0);
+}
+//animation for list items when loaded
+.list-item {
+    opacity: 0;
+    transform: translate3d(600px, 0, 0);
+    @include easeOut();
   }
+.list-item.appear {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+//animation for the home page
+section{
+    opacity: 0;
+    @include easeOut();
+}
+section.appear{
+    opacity: 1;
+}
