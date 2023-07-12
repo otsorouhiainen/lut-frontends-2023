@@ -1,12 +1,6 @@
 @import 'config';
+@import 'menu';
 
-$primary-color: black;
-$secondary-color: red;
-
-// transition delay and styling
-@mixin easeOut{
-    transition: all 0.5s ease-out;
-}
 body, html {
     color: $secondary-color;
     background: $primary-color;
@@ -127,7 +121,7 @@ slider {
       width: 0%;
     }
   }
-  
+
 .menu-nav {
     display: flex;
     flex-direction: row;
