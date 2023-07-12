@@ -4,6 +4,7 @@ body, html {
   font-family: 'Benguiat Bold', arial;
   height: 100%;
   margin: 0;
+  padding: 0;
   line-height: 1.8rem; }
 
 main {
@@ -12,26 +13,111 @@ main {
   text-align: center; }
 
 h1 {
-  padding-top: 3rem; }
+  padding-top: 3rem;
+  opacity: 0;
+  transition: all 0.5s ease-out; }
 
 h2 {
-  color: #fff; }
+  color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-out; }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: left;
+  z-index: 2; }
+
+slider {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  overflow: hidden;
+  position: absolute; }
+  slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden; }
+  slider slide:nth-child(1) {
+    left: 0%;
+    animation-delay: -1;
+    background-image: url("../img/starwars.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; }
+  slider slide:nth-child(2) {
+    left: 100%;
+    animation-delay: 2s;
+    background-image: url("../img/strangerthings.jpg");
+    background-size: cover;
+    background-position: center; }
+  slider slide:nth-child(3) {
+    left: 100%;
+    animation-delay: 5s;
+    background-image: url("../img/ghost.jpg");
+    background-size: cover;
+    background-position: center; }
+  slider slide:nth-child(4) {
+    left: 100%;
+    animation-delay: 8s;
+    background-image: url("../img/statue.jpg");
+    background-size: cover;
+    background-position: center; }
+  slider slide p {
+    font-family: Comfortaa;
+    font-size: 70px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 340px;
+    color: #fff; }
+
+@keyframes slide {
+  0% {
+    left: 100%;
+    width: 100%; }
+  5% {
+    left: 0%; }
+  25% {
+    left: 0%; }
+  30% {
+    left: -100%;
+    width: 100%; }
+  31% {
+    left: -100%;
+    width: 0%; }
+  100% {
+    left: 100%;
+    width: 0%; } }
 
 .menu-nav {
   display: flex;
+  flex-direction: row;
   position: fixed;
-  width: 100%; }
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0; }
 
 .nav-item {
   overflow: hidden;
   top: 0;
   width: 100%;
-  background-color: black; }
+  padding-right: 1rem;
+  background-color: black;
+  text-align: left; }
   .nav-item a {
     position: relative;
     color: #f2f2f2;
-    text-decoration: none;
-    padding: 14px; }
+    text-decoration: none; }
     .nav-item a:hover {
       transition: all 0.5s ease-out;
       color: red;
@@ -55,9 +141,8 @@ h2 {
 
 .card-container {
   display: grid;
-  grid-template-areas: 'blog blog blog' 'blog blog blog' 'blog blog blog';
-  gap: 1rem;
-  margin: 1rem; }
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(4, 1fr); }
 
 .card {
   background-color: #fff;
@@ -66,6 +151,7 @@ h2 {
   overflow: hidden;
   width: 15rem;
   text-align: center;
+  justify-self: center;
   opacity: 0;
   transform: translateY(600px);
   transition: all 0.5s ease-out; }
@@ -86,7 +172,7 @@ h2 {
 
 .list-item {
   opacity: 0;
-  transform: translate3d(600px, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: all 0.5s ease-out; }
 
 .list-item.appear {
@@ -99,3 +185,15 @@ section {
 
 section.appear {
   opacity: 1; }
+
+h1.appear {
+  opacity: 1; }
+
+h2.appear {
+  opacity: 1; }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .card-container {
+    grid-template-columns: 1fr; } }

@@ -28,3 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200 * index);
   });
 });
+
+// for the title animations
+document.addEventListener("DOMContentLoaded", function() {
+  const headers = document.querySelectorAll(".lg-heading, .sm-heading");
+  headers.forEach(function(item, index) {
+    setTimeout(function() {
+      console.log(item)
+      item.classList.add("appear"); // Add the "appear" class to each item with a delay
+    }, 200 * index);
+  });
+});
