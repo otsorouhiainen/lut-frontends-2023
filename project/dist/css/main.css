@@ -113,8 +113,9 @@ footer {
   z-index: 2; }
 
 slider {
+  padding: 0;
   display: block;
-  width: 100%;
+  width: 95%;
   height: 100%;
   background-color: #1f1f1f;
   overflow: hidden;
@@ -211,13 +212,12 @@ slider {
 
 .pimg1 {
   background-image: url("../img/lightning.jpg");
-  min-height: 40%;
+  min-height: 80%;
   position: relative;
   opacity: 0.70;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px red solid;
   background-attachment: fixed; }
 
 .card-container {
@@ -272,6 +272,10 @@ h1.appear {
 
 h2.appear {
   opacity: 1; }
+
+.copy {
+  float: left;
+  color: #fff; }
 
 @media screen and (min-width: 1171px) {
   menu {

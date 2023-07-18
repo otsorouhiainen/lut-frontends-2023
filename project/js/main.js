@@ -39,13 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
   const headers = document.querySelectorAll(".lg-heading, .sm-heading");
   headers.forEach(function(item, index) {
     setTimeout(function() {
-      console.log(item)
       item.classList.add("appear"); // Add the "appear" class to each item with a delay
     }, 200 * index);
   });
 });
-
-//Set initial state of menu
 
 // Set initial state as visible
 let showMenu = true;
@@ -56,7 +53,6 @@ menu.classList.add('show');
 menuNav.classList.add('show');
 navItems.forEach(item => item.classList.add('show'));
 
-// Add event listener
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
