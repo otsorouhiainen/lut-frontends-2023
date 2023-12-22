@@ -6,7 +6,7 @@ YouTube link to video of the project: https://youtu.be/CGtddtOEjWI
 
 <bold>Running project and exercises:</bold>
 
-Project site live at: https://karhusaatana.github.io/lut-frontends-2023/project/dist/
+Project site live at: https://otsorouhiainen.github.io/lut-frontends-2023/project/dist/
 
-Exercise site live at: https://karhusaatana.github.io/lut-frontends-2023/exercises/dist/
+Exercise site live at: https://otsorouhiainen.github.io/lut-frontends-2023/exercises/dist/
 
